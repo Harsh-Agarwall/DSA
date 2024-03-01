@@ -35,7 +35,7 @@ string infix_to_postfix(string s){
             }
         }
         else{
-            while(!st.empty() && prec(st.top())>prec(s[i])){
+            while(!st.empty() && prec(st.top())>=prec(s[i])){
                 ans+=st.top();
                 st.pop();
                 
@@ -50,7 +50,7 @@ string infix_to_postfix(string s){
 
 int main(){
 
-cout<<infix_to_postfix("(a-b/c)*(a/k-l)")<<endl;
+cout<<infix_to_postfix("(A*B-C^D^E/F+G/H)")<<endl;
 
     return 0;
 }
